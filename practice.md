@@ -2,11 +2,11 @@
 
 Follow these rules for every change to this project.
 
-## 1. Commit and push on every approved feature
+## 1. Commit and push automatically
 
-A feature is **approved** when the user says so in chat (for example "approved", "looks good", "save it"). Until then, do not commit.
+Do not wait for approval. As soon as a feature or change is finished and working, commit and push it without being asked. (The user changed this rule on 2026-11-24; before that, commits waited for approval.)
 
-For each approved feature:
+For each finished feature or change:
 
 1. Print every git command in the chat before running it.
 2. Stage only the files that belong to that feature.
@@ -27,7 +27,7 @@ Do not commit secrets (passwords, API keys, `.env` files).
 
 ## 2. Keep a README that describes the dashboard
 
-Create `README.md` if it does not exist yet. After each approved feature, update it **in the same commit** as the feature, so the README always matches what the dashboard can do.
+Create `README.md` if it does not exist yet. After each feature, update it **in the same commit** as the feature, so the README always matches what the dashboard can do.
 
 The README should contain:
 
@@ -41,8 +41,8 @@ Keep it short and written in plain language. Only list features that actually ex
 
 ## Checklist for each feature
 
-- [ ] The user approved the feature
+- [ ] The feature works (checked in the preview)
 - [ ] `README.md` description/features updated
 - [ ] Git commands printed in the chat
-- [ ] Committed (one feature, one commit)
+- [ ] Committed automatically (one feature, one commit)
 - [ ] Pushed to GitHub and confirmed
