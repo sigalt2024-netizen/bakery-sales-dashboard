@@ -64,8 +64,9 @@
 
   /* ---------- header + filter bar ---------- */
   function renderHeader() {
-    $('#dateLabel').textContent = new Date().toLocaleDateString(locale, { weekday: 'short', day: 'numeric', month: 'short' }) + ' · Sample data';
-    $('#updated').textContent = 'Updated ' + state.updated.toLocaleTimeString(locale, { hour: 'numeric', minute: '2-digit' });
+    $('#dateLabel').textContent = new Date().toLocaleDateString(locale, { weekday: 'short', day: 'numeric', month: 'short' });
+    $('#updated').textContent = 'Sample data';
+    $('#refreshBtn').setAttribute('aria-label', 'Refresh data (updated ' + state.updated.toLocaleTimeString(locale, { hour: 'numeric', minute: '2-digit' }) + ')');
     $$('[data-period]').forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.period === state.period)); });
     $$('[data-metric]').forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.metric === state.metric)); });
     var bar = $('#filterBar');

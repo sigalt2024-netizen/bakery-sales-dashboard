@@ -17,38 +17,47 @@ A mobile-first dashboard that lets the owner and staff of **The Bakery Shop** (e
 | # | Requirement | How this spec meets it |
 |---|-------------|------------------------|
 | 1 | **Mobile friendly** | Mobile-first single-column layout designed for 360–430 px wide screens, scaling up to tablet/desktop (§5). No hover-only interactions, no horizontal scrolling, bottom navigation within thumb reach. |
-| 2 | **Large buttons and icons** | Minimum 56 × 56 px touch targets, 32–48 px icons, big labels (§6). |
-| 3 | **Use the logo and complementary colors** | Logo placed in the header and used as the source of the palette (§3, §4). |
+| 2 | **Large buttons and icons** | Minimum 68 × 68 px touch targets (primary buttons 80 px), 40–56 px icons, big labels (§6). |
+| 3 | **Use the logo and complementary colors** | A large logo in the header, and a palette built from the logo's browns and gold plus a fresh green accent and a blue secondary (§3, §4). |
 
 ## 3. Branding
 
 ### 3.1 Logo usage
 - File: `assets/logo.jpg` (circular badge: croissant, script "Bakery", "The" / "Shop", "Fresh & Delicious", "Est. 2022").
-- **Header:** logo shown at **56 px height** (mobile) / **72 px** (tablet+), left-aligned, always linked to the Home screen.
+- **Header:** logo shown large, at **88 px height** (mobile) / **120 px** (tablet+), left-aligned, always linked to the Home screen. The header has a 5 px Leaf Green edge along its bottom.
+- **About screen:** logo at 200 px wide.
 - **Splash / loading screen:** logo centered at 160 px on cream background with a subtle pulse while data loads.
 - **Empty states and the "Closed for today" screen:** logo at 96 px above the message.
 - Keep clear space around the logo equal to the height of the "T" in "The". Never stretch, recolor, or place on a busy background. The JPG has a white background, so it sits on a **white header bar**; request a transparent PNG/SVG from the owner for use on colored backgrounds.
 - Browser tab / home-screen icon: crop to the croissant.
 
-### 3.2 Color palette (sampled from the logo + its complement)
+### 3.2 Color palette (sampled from the logo, plus green and a blue complement)
 
-The logo is built from warm browns and a golden-orange croissant (hue ≈ 25–35°). The complement on the color wheel is a **blue** (hue ≈ 200–215°), so a deep teal-blue is used as the accent. It makes numbers, links and primary actions pop against the warm base without clashing.
+The logo is built from warm browns and a golden-orange croissant (hue ≈ 25–35°).
+
+- **Green is the main accent.** A fresh leaf green (hue ≈ 140°) reads as natural and bakery-fresh, and sits well beside the warm browns. It is used for everything interactive: primary and selected buttons, the active navigation item, KPI icon circles, chart bars, the header edge and the outer ring of the hero card.
+- **Blue is the secondary accent.** The wheel complement of the logo's orange is a blue (hue ≈ 200–215°), kept for the "Drinks" category and other secondary highlights.
+- **Gold stays the brand highlight** (hero card border, nav indicator, "Pastries").
 
 | Role | Name | Hex | Used for |
 |------|------|-----|----------|
 | Brand dark | Espresso | `#4A2E14` | Headings, body text, icons on light backgrounds |
 | Brand mid | Caramel | `#A9702F` | Secondary text, borders, chart series 2 |
-| Brand primary | Croissant Gold | `#D98B3A` | Highlights, selected states, chart series 1 |
-| Brand light | Butter | `#F0B66B` | Hover/pressed tints, chart series 3 |
+| Brand primary | Croissant Gold | `#D98B3A` | Hero card border, nav indicator, "Pastries" category |
+| Brand light | Butter | `#F0B66B` | Hero card total, hover/pressed tints |
 | Surface | Cream | `#FFF6E8` | Page background |
 | Surface raised | White | `#FFFFFF` | Cards, header bar (matches logo background) |
-| **Complement (accent)** | **Blueberry** | `#2B6A83` | Primary buttons, active nav item, key numbers, links |
-| Complement tint | Blueberry Mist | `#DCEBF1` | Accent card backgrounds, chart gridlines |
+| **Main accent** | **Leaf Green** | `#2E7D46` | Primary and selected buttons, active nav item, KPI icons, selected chart bar, header edge, section markers, links |
+| Accent tint | Mint | `#DDEFE0` | Accent backgrounds: icon circles, chart readout, filter pill, refresh button |
+| Chart bars | Fresh Green | `#5BAA6E` | Unselected chart bars |
+| Secondary accent | Blueberry | `#2B6A83` | "Drinks" category, secondary highlights |
+| Secondary tint | Blueberry Mist | `#DCEBF1` | Secondary backgrounds |
 | Positive | Sage | `#3E7C4F` | "Up vs. last period" |
 | Negative | Berry | `#B03A48` | "Down vs. last period", low stock |
 
 **Contrast rules (WCAG AA):**
-- Espresso on Cream ≈ 11:1 ✔ · White on Blueberry ≈ 6:1 ✔ · Espresso on Croissant Gold ≈ 4.5:1 ✔ (use bold/large text only).
+- Espresso on Cream ≈ 11:1 ✔ · White on Leaf Green ≈ 5:1 ✔ · White on Blueberry ≈ 6:1 ✔ · Espresso on Croissant Gold ≈ 4.5:1 ✔ (use bold/large text only).
+- Leaf Green on Mint and on White is used for large or bold text and icons only.
 - White text on Caramel or Gold is **not** allowed (below 4.5:1).
 - Never use color alone to convey up/down: always pair with an arrow icon (▲ / ▼) and a +/− sign.
 
@@ -58,11 +67,11 @@ The logo is built from warm browns and a golden-orange croissant (hue ≈ 25–3
 - Base size **18 px** (larger than usual for readability); KPI numbers **36–44 px**, bold.
 
 ## 4. Visual style
-- Rounded corners: 20 px on cards, 28 px on buttons (pill-like, echoing the circular logo).
+- Rounded corners: 20 px on cards, 34–40 px on buttons (pill-like, echoing the circular logo).
 - Soft shadow (`0 4px 12px rgba(74,46,20,.12)`); no thin hairline borders.
 - Generous spacing: 16 px page gutters, 16 px between cards.
-- Decorative touch: a thin double ring (Espresso + Gold) around the hero card, inspired by the logo's circle.
-- Icons: a single filled, rounded icon set (e.g. Material Symbols Rounded or Phosphor Fill), 2 px stroke weight when outlined, Espresso or Blueberry only.
+- Decorative touch: a double ring (Gold border + Leaf Green outer ring) around the hero card, inspired by the logo's circle. Card and section titles get a small Leaf Green marker bar.
+- Icons: a single filled, rounded icon set (e.g. Material Symbols Rounded or Phosphor Fill), 2 px stroke weight when outlined, Espresso or Leaf Green only.
 
 ## 5. Layout and responsiveness
 
@@ -85,9 +94,9 @@ Rules:
 
 ```
 ┌──────────────────────────────┐
-│ [LOGO]  Today, Mon 24 Nov  ⟳ │  ← white header, logo 56px, refresh button
-├──────────────────────────────┤
-│ [ Today ][ Week ][ Month ][⋯]│  ← big segmented buttons (56px)
+│ [ LOGO ] Sales Dashboard   ⟳ │  ← white header, logo 88px, green edge, refresh button
+├━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┤
+│ [ Today ][ Week ][ Month ]   │  ← big segmented buttons (68px)
 ├──────────────────────────────┤
 │  ╔════════════════════════╗  │
 │  ║  💰 TOTAL SALES        ║  │  ← hero card (double ring)
@@ -110,7 +119,7 @@ Rules:
 │  3 🧁 Cupcake            41   │
 │        [ See all ▸ ]          │
 ├──────────────────────────────┤
-│ 🏠Home  📈Sales  🥖Items  ⚙️More│  ← bottom nav, 64px tall
+│ 🏠Home  📈Sales  🥖Items  ⚙️More│  ← bottom nav, 80px tall
 └──────────────────────────────┘
 ```
 
@@ -118,28 +127,29 @@ Rules:
 
 | Element | Minimum size | Notes |
 |---------|-------------|-------|
-| Any tappable target | **56 × 56 px** (48 px absolute floor on desktop mouse) | At least 12 px spacing between adjacent targets |
-| Primary buttons | 64 px tall, full-width on phone, Blueberry background, white 20 px bold label | Icon (28 px) to the left of label |
-| Segmented period buttons | 56 px tall, equal width, selected = Blueberry fill + white text; unselected = white + Espresso text | |
-| Bottom navigation items | 64 px tall, icon **32 px** + 14 px label, always show labels | Active item: Blueberry icon + Gold indicator bar |
-| KPI card icons | **48 px**, inside a 72 px Blueberry Mist circle | |
-| List row icons | 40 px | Whole row is tappable (min 64 px tall) |
-| Icon-only buttons (refresh, calendar) | 56 px hit area, 32 px icon, with `aria-label` | |
+| Any tappable target | **68 × 68 px** (56 px absolute floor on desktop mouse) | At least 12 px spacing between adjacent targets |
+| Primary buttons | **80 px** tall, full-width on phone, Leaf Green background, white 22 px bold label | Icon (28 px) to the left of label |
+| Segmented period buttons | 68 px tall, equal width, 20 px label; selected = Leaf Green fill + white text; unselected = white + Espresso text | |
+| Bottom navigation items | 80 px tall, icon **40 px** + 15 px label, always show labels | Active item: Leaf Green icon + Gold indicator bar |
+| KPI card icons | **40 px**, inside an 84 px Mint circle, Leaf Green icon | |
+| List row icons | 52 px | Whole row is tappable (min 76 px tall) |
+| Icon-only buttons (refresh, calendar) | 68 px hit area, 36 px icon, with `aria-label` | |
+| Category and filter buttons | 68 px tall, 26 px color dot | |
 
 Interaction feedback: pressed state darkens fill 10 % and scales to 0.97; haptic tick on mobile where supported.
 
 ## 7. Screens and content
 
 ### 7.1 Home (default)
-1. **Header** — logo, current date, refresh button, "last updated hh:mm".
+1. **Header** — large logo, title, current date, "Sample data" label (until real data is connected), refresh button (the last-updated time is in its accessible label).
 2. **Period selector** — *Today · This Week · This Month · Custom* (Custom opens a large calendar sheet with big day cells, ≥ 48 px).
 3. **Hero card — Total Sales** for the period, comparison vs. previous period with ▲/▼ and %.
-4. **KPI cards (2 × 2)** — each with a 48 px icon, label, value:
+4. **KPI cards (2 × 2)** — each with a 40 px icon in an 84 px circle, label, value:
    - 🧾 **Orders** (count)
    - 🥐 **Items sold** (count)
    - 👛 **Average order** (currency)
    - ⏰ **Peak hour** (time range)
-5. **Sales by hour** (Today) / **by day** (Week/Month) — bar chart, Gold bars, peak bar highlighted in Blueberry, 220 px tall, tap a bar to see a tooltip sheet with exact value.
+5. **Sales by hour** (Today) / **by day** (Week/Month) — bar chart, green bars, the selected (initially the peak) bar in Leaf Green, 220 px tall, tap a bar to see a tooltip sheet with exact value.
 6. **Best sellers** — top 5 products with icon, name, units, revenue; "See all" button.
 7. **Category split** — donut chart (Breads, Pastries, Cakes, Cookies, Drinks) with large legend buttons that filter the dashboard when tapped.
 
@@ -149,7 +159,7 @@ Interaction feedback: pressed state darkens fill 10 % and scales to 0.97; haptic
 - Payment method breakdown (💳 Card, 💵 Cash, 📱 Mobile pay).
 
 ### 7.3 Items
-- Searchable list of products (search field 56 px tall, sticky).
+- Searchable list of products (search field 72 px tall, sticky below the header).
 - Category chips (large, horizontally scrollable, snap scrolling).
 - Per product: icon, units sold, revenue, **stock left** (Berry "Low stock" badge when ≤ 5 units).
 
@@ -197,13 +207,13 @@ Derived metrics (computed per selected period, compared with the immediately pre
 ## 10. Accessibility
 - WCAG 2.1 AA contrast (see §3.2).
 - All icons have text labels or `aria-label`; charts have a text summary ("Peak: 8–9 AM, $214") and a "View as table" toggle.
-- Focus rings: 3 px Blueberry outline, visible on keyboard navigation.
-- Respect `prefers-reduced-motion` and `prefers-color-scheme`. Dark mode: Espresso background (`#2A1A0C`), Cream text, Gold/Blueberry accents lightened to keep contrast.
+- Focus rings: 3 px Leaf Green outline, visible on keyboard navigation.
+- Respect `prefers-reduced-motion` and `prefers-color-scheme`. Dark mode: Espresso background (`#2A1A0C`), Cream text, and the green accent lightened to `#8FD3A1` (dark text on it) to keep contrast.
 - Supports browser text zoom to 200 % without breaking layout.
 
 ## 11. Suggested tech (non-binding)
 - Single-page web app (PWA, installable on the home screen), HTML/CSS/JS or React + Vite.
-- Tailwind CSS or CSS variables for the tokens in §3.2 (`--espresso`, `--caramel`, `--gold`, `--butter`, `--cream`, `--blueberry`, `--mist`).
+- Tailwind CSS or CSS variables for the tokens in §3.2 (`--espresso`, `--caramel`, `--gold`, `--butter`, `--cream`, `--leaf`, `--mint`, `--blueberry`, `--mist`), plus `--tap: 68px` for the minimum tap target.
 - Charts: Chart.js or lightweight SVG charts, themed with the palette.
 - Hosting: any static host; no login required for v1 (add PIN protection in v2).
 
@@ -211,8 +221,10 @@ Derived metrics (computed per selected period, compared with the immediately pre
 
 - [ ] Logo appears in the header on every screen and on the loading screen, unstretched.
 - [ ] Only palette colors from §3.2 are used; no text fails AA contrast.
-- [ ] Every tappable control is at least 56 × 56 px on phone (verified with devtools at 360 × 740 and 390 × 844).
-- [ ] Navigation icons are ≥ 32 px and KPI icons ≥ 48 px, all labeled.
+- [ ] Every tappable control is at least 68 × 68 px on phone (verified with devtools at 360 × 740 and 390 × 844).
+- [ ] The header logo is at least 88 px tall on phone and 120 px on tablet/desktop.
+- [ ] Navigation icons are 40 px and KPI icons 40 px (in 84 px circles), all labeled.
+- [ ] Green (Leaf Green and Mint) is the dominant accent on buttons, navigation, icons and charts.
 - [ ] No horizontal scrolling from 320 px up to 1440 px width.
 - [ ] Home screen shows total sales, orders, items, average order, hourly chart and top 5 products without scrolling past two screen heights on a phone.
 - [ ] Switching Today / Week / Month updates all widgets in < 300 ms (with local data).
@@ -231,3 +243,10 @@ Derived metrics (computed per selected period, compared with the immediately pre
 3. Single shop or multiple locations?
 4. Which currency and language(s) should be supported?
 5. Who will view this — owner only, or all staff?
+
+## 15. Revision history
+
+| Version | Date | Changes |
+|---------|------|---------|
+| 1.0 | 2026-11-24 | First spec and first working version (sample data). |
+| 1.1 | 2026-11-24 | **Larger buttons:** minimum tap target 56 → 68 px, primary buttons 64 → 80 px, bottom navigation 64 → 80 px with 40 px icons. **Larger logo:** header logo 56 → 88 px (phone) and 72 → 120 px (tablet+). **More green:** Leaf Green replaces blue as the main accent (buttons, navigation, icons, charts, header edge, hero ring); blue kept as a secondary accent. |

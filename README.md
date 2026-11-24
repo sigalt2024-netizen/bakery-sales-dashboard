@@ -2,7 +2,7 @@
 
 ![The Bakery Shop logo](assets/logo.jpg)
 
-A mobile-friendly dashboard that shows how sales are going at **The Bakery Shop** — total sales, orders, best sellers and busiest hours — with large buttons and icons that are easy to tap on a phone. It uses the shop's logo and a palette taken from it (browns and croissant gold, with a blue accent).
+A mobile-friendly dashboard that shows how sales are going at **The Bakery Shop** — total sales, orders, best sellers and busiest hours — with large buttons and icons that are easy to tap on a phone. It shows the shop's logo large in the header and uses a palette taken from it: browns and croissant gold, with fresh green as the main accent color.
 
 > **Version 1 uses sample data.** The numbers are generated in the browser and are not real sales.
 
@@ -16,7 +16,7 @@ A mobile-friendly dashboard that shows how sales are going at **The Bakery Shop*
 - **Sales tab:** switch the chart between revenue, orders and items; payment methods (card, cash, mobile pay); daily totals.
 - **Items tab:** search products, filter by category, see units sold and stock left with a low-stock warning.
 - **More tab:** export the current view as CSV, share today's summary, dark mode.
-- **Responsive:** bottom navigation on phones, side navigation on desktop; every tap target is at least 56 px.
+- **Responsive:** bottom navigation on phones, side navigation on desktop; every tap target is at least 68 px, with large icons.
 
 ## How to view it
 
